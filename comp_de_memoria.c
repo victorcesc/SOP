@@ -43,7 +43,20 @@ int main(int argc, char *argv[])
 		perror("shmat");
 		exit(1);
 	}  
-     
+     	
+/*	for(){
+	   pid = fork();
+	   if(pid ==0){
+		///
+exit(0);
+	   }
+	}		
+
+	for(){
+	wait(NULL)	
+	}
+*/	
+
 	if((filho = fork()) == -1)
 	{
 		perror("fork");
@@ -52,10 +65,10 @@ int main(int argc, char *argv[])
 
 	if(filho == 0)
 	{
-	        char *ptr_msg = "alo pai, tudo bem?";   
-		printf("Filho escrevendo no segmento compartilhado\n\n");
+	        //char *ptr_msg = "alo pai, tudo bem?";   
+		//printf("Filho escrevendo no segmento compartilhado\n\n");
 		//completar aqui strcpy(segmento, ptr_msg);       //aqui deveria testar a cpacidade da área...
-		strcpy(segmento, ptr_msg);
+		//strcpy(segmento, ptr_msg);
 		exit(0);
 	}
 	else
@@ -79,7 +92,7 @@ void iniciar_matriz(){
 
 	for(int i=0;i<4;i++){
 		for(int j=0;j<10;j++){
-			//pMatriz->matriz[i][j] = rand() % 10;
+		//	pMatriz->matriz[i][j] = rand() % 10;
 		}
 	}
 
