@@ -7,6 +7,7 @@
 #include <sys/stat.h>
 #include <unistd.h>
 #include <wait.h>
+#include <conio.h>
 
 
 #define SHM_SIZE 1024 
@@ -78,7 +79,7 @@ void iniciar_matriz(){
 
 	for(int i=0;i<4;i++){
 		for(int j=0;j<10;j++){
-			pMatriz->matriz = 
+			//pMatriz->matriz[i][j] = rand() % 10;
 		}
 	}
 
