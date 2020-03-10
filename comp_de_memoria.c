@@ -12,7 +12,7 @@
 
 #define SHM_SIZE 1024 
 
-struct {
+struct cbmatriz{
 	int matriz[4][10];
 	int padrao;
 	int contador;
@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
 	
 
 	
-	pMatriz = shmat(shmid, (void *)0, 0);
+	pMatriz = (struct cbmatriz*) shmat(shmid, (void *)0, 0);
 	if (segmento == (char *)(-1)) {
 		perror("shmat");
 		exit(1);
